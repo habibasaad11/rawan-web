@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Engineer & Specialist Portfolio</title>
+<style>
+  :root{
+    --navy:#16175c;
+    --blue:#2f3bd6;
+    --light-blue:#eaf3fb;
+    --text-gray:#6b7280;
+    --section-bg:#f3f3fa;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family: 'Segoe UI', Arial, sans-serif; color:#1c1c2e;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+
+  /* HEADER */
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 60px;
+    background:var(--light-blue);
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:bold;font-size:20px;}
+  .logo-icon{
+    width:38px;height:38px;
+    background:linear-gradient(135deg,#2f3bd6,#16175c);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:18px;
+  }
+  nav ul{display:flex;gap:30px;font-size:15px;font-weight:500;}
+  nav a:hover{color:var(--blue);}
+  .btn{
+    padding:10px 24px;
+    border-radius:30px;
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    border:2px solid var(--navy);
+    background:transparent;
+    color:var(--navy);
+    transition:.2s;
+  }
+  .btn-primary{
+    background:var(--navy);
+    color:#fff;
+    border:none;
+  }
+  .btn:hover{opacity:.85;}
+
+  /* HERO */
+  .hero{
+    background:var(--light-blue);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:60px 60px 90px;
+    gap:40px;
+    flex-wrap:wrap;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-text{max-width:480px;}
+  .hero-text h4{font-size:18px;font-weight:600;margin-bottom:10px;}
+  .hero-text h1{
+    font-size:46px;
+    line-height:1.2;
+    color:var(--blue);
+    font-weight:800;
+    margin-bottom:20px;
+  }
+  .hero-text p{color:var(--text-gray);margin-bottom:25px;line-height:1.6;}
+  .hero-buttons{display:flex;gap:15px;}
+  .hero-buttons .btn-outline{
+    background:#fff;
+    border:2px solid var(--navy);
+    color:var(--navy);
+  }
+
+  .hero-image{
+    position:relative;
+    width:380px;
+    flex-shrink:0;
+  }
+  .hero-image-circle{
+    width:380px;height:380px;
+    border-radius:50%;
+    background:linear-gradient(180deg,#dbe9f7,#c9def0);
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+  }
+  .hero-image img{width:100%;}
+  .review-card{
+    position:absolute;
+    top:60px;
+    left:-40px;
+    background:#fff;
+    border-radius:12px;
+    padding:10px 16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:13px;
+  }
+  .review-card .avatar{
+    width:30px;height:30px;border-radius:50%;
+    background:#ffd1a8;
+  }
+  .review-card .stars{color:#f5a623;font-size:12px;}
+  .badge-shield{
+    position:absolute;
+    bottom:50px;left:10px;
+    width:44px;height:44px;
+    background:var(--navy);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;
+    font-size:18px;
+  }
+  .social-floating{
+    position:absolute;
+    bottom:0;right:0;
+    background:#fff;
+    border-radius:30px;
+    padding:8px 14px;
+    display:flex;
+    gap:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+  }
+  .social-floating span{
+    width:28px;height:28px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:13px;
+  }
+  .social-floating .fb{background:#3b5998;}
+  .social-floating .tg{background:#29a9eb;}
+  .social-floating .in{background:#0077b5;}
+
+  /* ABOUT */
+  .about{
+    display:flex;
+    align-items:center;
+    gap:60px;
+    padding:80px 60px;
+    flex-wrap:wrap;
+  }
+  .about-image{
+    position:relative;
+    width:320px;
+    flex-shrink:0;
+  }
+  .about-image .blob1{
+    position:absolute;
+    width:180px;height:180px;
+    background:var(--blue);
+    border-radius:50%;
+    top:-30px;left:-30px;
+    z-index:0;
+  }
+  .about-image .blob2{
+    position:absolute;
+    width:140px;height:140px;
+    background:#bcd0f0;
+    border-radius:50%;
+    bottom:-30px;left:40px;
+    z-index:0;
+  }
+  .about-image img{position:relative;z-index:1;border-radius:20px;}
+  .about-content{flex:1;min-width:300px;}
+  .about-content h2{font-size:36px;margin-bottom:14px;}
+  .about-content > p{color:var(--text-gray);margin-bottom:30px;line-height:1.6;}
+  .skill{margin-bottom:20px;}
+  .skill h4{margin-bottom:8px;font-size:15px;}
+  .bar{
+    height:6px;
+    background:#e5e7eb;
+    border-radius:10px;
+    position:relative;
+  }
+  .bar-fill{
+    height:6px;
+    border-radius:10px;
+    position:relative;
+  }
+  .bar-fill::after{
+    content:"";
+    position:absolute;
+    right:-7px;top:-4px;
+    width:14px;height:14px;
+    border-radius:50%;
+    background:#fff;
+    border:3px solid var(--bar-color, var(--navy));
+  }
+  .bar-fill.ux{width:92%;background:linear-gradient(90deg,#1c1c2e,#d62828);--bar-color:#d62828;}
+  .bar-fill.web{width:88%;background:linear-gradient(90deg,#1c1c2e,#f0932b);--bar-color:#f0932b;}
+  .bar-fill.app{width:80%;background:linear-gradient(90deg,#1c1c2e,#6b7280);--bar-color:#6b7280;}
+  .bar-fill.graphic{width:95%;background:linear-gradient(90deg,#1c1c2e,#2f3bd6);--bar-color:#2f3bd6;}
+
+  /* SERVICES */
+  .services{
+    background:var(--section-bg);
+    padding:80px 60px;
+    text-align:center;
+  }
+  .services h2{font-size:36px;margin-bottom:12px;}
+  .services > p{color:var(--text-gray);max-width:500px;margin:0 auto 50px;line-height:1.6;}
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .service-card{
+    background:#e6e6f0;
+    border-radius:14px;
+    padding:30px 22px;
+    text-align:left;
+    transition:.2s;
+  }
+  .service-card.active{
+    background:#fff;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+  }
+  .service-icon{
+    width:50px;height:50px;
+    border:2px solid var(--navy);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+    font-size:22px;
+    color:var(--navy);
+  }
+  .service-card h3{margin-bottom:10px;font-size:18px;}
+  .service-card p{color:var(--text-gray);font-size:14px;line-height:1.5;}
+  .service-card p a{color:var(--blue);font-weight:600;}
+
+  /* PORTFOLIO */
+  .portfolio{
+    padding:80px 60px;
+    text-align:center;
+  }
+  .portfolio h2{font-size:36px;margin-bottom:12px;}
+  .portfolio > p{color:var(--text-gray);max-width:500px;margin:0 auto 35px;line-height:1.6;}
+  .filters{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:40px;
+    flex-wrap:wrap;
+  }
+  .filter-btn{
+    padding:10px 22px;
+    border-radius:30px;
+    background:#f0f0f5;
+    border:none;
+    font-size:14px;
+    font-weight:500;
+    cursor:pointer;
+    color:#444;
+  }
+  .filter-btn.active{
+    background:var(--navy);
+    color:#fff;
+  }
+  .portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .portfolio-card{
+    background:#3b3b46;
+    border-radius:14px;
+    overflow:hidden;
+    text-align:left;
+    color:#fff;
+  }
+  .portfolio-thumb{
+    background:linear-gradient(135deg,#fcd9a8,#a8d8f0);
+    height:180px;
+    margin:14px;
+    border-radius:10px;
+  }
+  .portfolio-info{padding:0 18px 20px;}
+  .portfolio-tag{color:#f0932b;font-size:13px;font-weight:600;margin-bottom:6px;display:block;}
+  .portfolio-info h4{font-size:16px;font-weight:600;line-height:1.4;}
+
+  /* CONTACT */
+  .contact{
+    background:var(--section-bg);
+    padding:80px 60px;
+  }
+  .contact-wrap{
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    gap:50px;
+    flex-wrap:wrap;
+  }
+  .contact-info{flex:1;min-width:280px;}
+  .contact-info h2{font-size:36px;margin-bottom:14px;}
+  .contact-info > p{color:var(--text-gray);margin-bottom:30px;line-height:1.6;}
+  .contact-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:20px;
+  }
+  .contact-icon{
+    width:44px;height:44px;
+    flex-shrink:0;
+    border-radius:50%;
+    background:var(--navy);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+  }
+  .contact-item h4{font-size:15px;margin-bottom:3px;}
+  .contact-item p{color:var(--text-gray);font-size:14px;}
+  .contact-socials{display:flex;gap:12px;margin-top:25px;}
+  .contact-socials span{
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--navy);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    cursor:pointer;
+  }
+  .contact-form{
+    flex:1;
+    min-width:280px;
+    background:#fff;
+    border-radius:16px;
+    padding:35px;
+    box-shadow:0 15px 30px rgba(0,0,0,.06);
+  }
+  .contact-form .row{
+    display:flex;
+    gap:15px;
+    margin-bottom:18px;
+    flex-wrap:wrap;
+  }
+  .contact-form input,
+  .contact-form textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid #e0e0e8;
+    border-radius:8px;
+    font-size:14px;
+    font-family:inherit;
+    outline:none;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus{
+    border-color:var(--blue);
+  }
+  .contact-form .full{margin-bottom:18px;}
+  .contact-form textarea{resize:vertical;min-height:110px;}
+  .contact-form .btn-primary{
+    width:100%;
+    padding:13px;
+    border-radius:8px;
+    font-size:15px;
+  }
+
+  footer{
+    background:var(--navy);
+    color:#fff;
+    text-align:center;
+    padding:30px;
+    font-size:14px;
+  }
+
+  @media (max-width:900px){
+    header{padding:20px;flex-wrap:wrap;gap:15px;justify-content:center;}
+    nav ul{flex-wrap:wrap;justify-content:center;gap:15px;}
+    .hero, .about, .services, .portfolio{padding:50px 20px;}
+    .service-grid, .portfolio-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:600px){
+    .service-grid, .portfolio-grid{grid-template-columns:1fr;}
+    .hero-text h1{font-size:32px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">🤖</div>
+    <span>Rawan Ayman</span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+  <button class="btn btn-primary">Let's Talk</button>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h4>Hi I am Rawan Ayman</h4>
+    <h1>AI Engineer &<br>Specialist</h1>
+    <p>Transforming complex ideas into intelligent solutions. I build AI systems that learn from data and deliver impactful results.</p>
+    <div class="hero-buttons">
+      <button class="btn btn-primary">Contact Us</button>
+      <button class="btn btn-outline">Portfolio</button>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <div class="review-card">
+      <div class="avatar"></div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div>20k+ Customer Review</div>
+      </div>
+    </div>
+    <div class="hero-image-circle">
+      <img src="/img/1776486958919.jpg" alt="AI Engineer portrait">
+    </div>
+    <div class="badge-shield">🛡</div>
+    <div class="social-floating">
+      <span class="fb">f</span>
+      <span class="tg">t</span>
+      <span class="in">in</span>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-image">
+    <div class="blob1"></div>
+    <div class="blob2"></div>
+    <img src="/img/1776486958919.jpg" alt="AI Engineer photo">
+  </div>
+  <div class="about-content">
+    <h2>About Me</h2>
+    <p>I am Rawan Ayman, an AI engineer who loves transforming complex ideas into intelligent solutions. My passion is to build AI systems that learn from data and deliver impactful results. By merging creativity with technical logic, I design AI models that are not only effective but also scalable and easy to understand. My goal is always to organize the chaos in data and convert it into clear decisions that help build a smarter future.</p>
+
+    <div class="skill">
+      <h4>Machine Learning</h4>
+      <div class="bar"><div class="bar-fill ux"></div></div>
+    </div>
+    <div class="skill">
+      <h4>Deep Learning</h4>
+      <div class="bar"><div class="bar-fill web"></div></div>
+    </div>
+    <div class="skill">
+      <h4>NLP & LLMs</h4>
+      <div class="bar"><div class="bar-fill app"></div></div>
+    </div>
+    <div class="skill">
+      <h4>Data Engineering</h4>
+      <div class="bar"><div class="bar-fill graphic"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <h2>My AI Services</h2>
+  <p>Building intelligent systems and automation pipelines that are both powerful and reliable, ensuring measurable results</p>
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <h3>Machine Learning</h3>
+      <p>Custom ML models trained and optimized for accuracy and performance. My approach <a href="#">Read more...</a></p>
+    </div>
+    <div class="service-card active">
+      <div class="service-icon">🧠</div>
+      <h3>Deep Learning</h3>
+      <p>Neural network architectures designed for complex pattern recognition tasks. My approach <a href="#">Read more...</a></p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💬</div>
+      <h3>NLP & Chatbots</h3>
+      <p>Conversational AI and language models built to understand and engage users. My approach <a href="#">Read more...</a></p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <h3>AI Automation</h3>
+      <p>End-to-end automation pipelines that streamline workflows and save time. My approach <a href="#">Read more...</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <h2>My Portfolio</h2>
+  <p>Explore a collection of my AI projects, each built to deliver smart, scalable, and impactful results.</p>
+
+  <div class="filters">
+    <button class="filter-btn">All</button>
+    <button class="filter-btn active">Machine Learning</button>
+    <button class="filter-btn">Deep Learning</button>
+    <button class="filter-btn">NLP / Chatbots</button>
+    <button class="filter-btn">Automation</button>
+  </div>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <div class="portfolio-thumb"></div>
+      <div class="portfolio-info">
+        <span class="portfolio-tag">AI Project</span>
+        <h4>Predictive Analytics Model & Dashboard</h4>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <div class="portfolio-thumb"></div>
+      <div class="portfolio-info">
+        <span class="portfolio-tag">AI Project</span>
+        <h4>AI Chatbot for Customer Support</h4>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <div class="portfolio-thumb"></div>
+      <div class="portfolio-info">
+        <span class="portfolio-tag">AI Project</span>
+        <h4>Computer Vision Detection System</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p>Have a project in mind or want to discuss an AI solution? Let's talk and build something smart together.</p>
+
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <h4>Email</h4>
+          <p>rawan.ayman@email.com</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h4>Phone</h4>
+          <p>+20 100 000 0000</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Location</h4>
+          <p>Gharbia, Egypt</p>
+        </div>
+      </div>
+
+      <div class="contact-socials">
+        <span>f</span>
+        <span>in</span>
+        <span>t</span>
+      </div>
+    </div>
+
+    <form class="contact-form">
+      <div class="row">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+      </div>
+      <div class="full">
+        <input type="text" placeholder="Subject">
+      </div>
+      <div class="full">
+        <textarea placeholder="Your Message"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Rawan Ayman. All rights reserved.
+</footer>
+
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+  document.querySelectorAll('.service-card').forEach(card=>{
+    card.addEventListener('click',()=>{
+      document.querySelectorAll('.service-card').forEach(c=>c.classList.remove('active'));
+      card.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
